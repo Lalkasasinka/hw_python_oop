@@ -71,8 +71,8 @@ class Running(Training):
 
 
 class SportsWalking(Training):
-    """Тренировка: спортивная ходьба.""" 
-    CM_IN_M: int = 100                                #''''''
+    """Тренировка: спортивная ходьба."""
+    CM_IN_M: int = 100
     CALORIES_WEIGHT_MULTIPLIER: float = 0.035
     CALORIES_SPEED_HEIGHT_MULTIPLIER: float = 0.029
 
@@ -94,9 +94,9 @@ class SportsWalking(Training):
 
 class Swimming(Training):
     """Тренировка: плавание."""
-    LEN_STEP: float = 1.38       
-    SPEED_SHIFT: float = 1.1                 #'''CALORIES_SWIMMING_SHIFT'''                       
-    CALLORIES_WEIGHT_MULTIPLIER: int = 2     #'''CALORIES_SWIMMING_MULTIPLIER'''
+    LEN_STEP: float = 1.38
+    SPEED_SHIFT: float = 1.1               # '''CALORIES_SWIMMING_SHIFT'''
+    CALLORIES_WEIGHT_MULTIPLIER: int = 2   # '''CALORIES_SWIMMING_MULTIPLIER'''
 
     def __init__(self,
                  action: int,
