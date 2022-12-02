@@ -71,11 +71,10 @@ class Running(Training):
 
 
 class SportsWalking(Training):
-    """Тренировка: спортивная ходьба."""
-    KMH_IN_MSEC: int = 0.278
-    CM_IN_M: int = 100
-    CALORIES_WEIGHT_MULTIPLIER = 0.035
-    CALORIES_SPEED_HEIGHT_MULTIPLIER = 0.029
+    """Тренировка: спортивная ходьба.""" 
+    CM_IN_M: int = 100                                #''''''
+    CALORIES_WEIGHT_MULTIPLIER: float = 0.035
+    CALORIES_SPEED_HEIGHT_MULTIPLIER: float = 0.029
 
     def __init__(self,
                  action: int,
@@ -95,9 +94,9 @@ class SportsWalking(Training):
 
 class Swimming(Training):
     """Тренировка: плавание."""
-    LEN_STEP: float = 1.38
-    SPEED_SHIFT: float = 1.1
-    CALLORIES_WEIGHT_MULTIPLIER: int = 2
+    LEN_STEP: float = 1.38       
+    SPEED_SHIFT: float = 1.1                 #'''CALORIES_SWIMMING_SHIFT'''                       
+    CALLORIES_WEIGHT_MULTIPLIER: int = 2     #'''CALORIES_SWIMMING_MULTIPLIER'''
 
     def __init__(self,
                  action: int,
@@ -128,6 +127,7 @@ def read_package(workout_type: str, data: list) -> Training:
     }
     if workout_type not in TRAINIG_CODE:
         print('Такой тренировки нет')
+        return
     return TRAINIG_CODE[workout_type](*data)
 
 
